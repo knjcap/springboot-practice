@@ -5,6 +5,7 @@ import com.tgp.demo.exceptionHandlers.DuplicateResourceException;
 import com.tgp.demo.exceptionHandlers.ResourceNotFoundException;
 import com.tgp.demo.model.Corridor;
 import com.tgp.demo.repository.CorridorRepository;
+import org.hibernate.annotations.TenantId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,9 @@ public class CorridorService {
     public List<Corridor> getCorridor(){
         return corridorRepository.findAll();
 
+    }
+    public List<Corridor> getCorridorByTenantId(String tenantID){
+        return corridorRepository.findCorridorByTenantId(tenantID);
     }
 
     public void addNewCorridor(CorridorRequest corridorRequest) {

@@ -25,6 +25,12 @@ public class CorridorController {
         return corridorService.getCorridor();
 
     }
+    @GetMapping (path="/by")
+    public List<Corridor> getCorridorByTenantId(
+            //@PathVariable ("h") String by,
+            @RequestParam String tenantId) {
+        return corridorService.getCorridorByTenantId(tenantId);
+    }
 
     @PostMapping (path ="/AddNewCorridor")
     public void addNewCorridor(@RequestBody CorridorRequest corridorRequest) {
