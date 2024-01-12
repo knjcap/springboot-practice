@@ -21,7 +21,9 @@ public class StudentConfig {
                     "Philippine Peso",
                     "Bank Transfer",
                     "Sendwave",
-                    true);
+                    true,
+                    null,
+                    null);
             Corridor wrusphcp = new Corridor(
                     null,
                     "United States",
@@ -30,7 +32,9 @@ public class StudentConfig {
                     "Philippine Peso",
                     "Cash Pickup",
                     "WorldRemit",
-                    true);
+                    true,
+                    null,
+                    null);
             Corridor wraukemo = new Corridor(
                     null,
                     "Australia",
@@ -39,7 +43,9 @@ public class StudentConfig {
                     "Kenyan Shilling",
                     "Mobile Money",
                     "WorldRemit",
-                    true);
+                    true,
+                    null,
+                    null);
 
             repository.saveAll(
                     List.of(swukphbt, wrusphcp, wraukemo)
