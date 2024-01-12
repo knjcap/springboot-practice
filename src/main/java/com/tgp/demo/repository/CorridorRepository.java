@@ -13,5 +13,13 @@ import java.util.Optional;
 public interface CorridorRepository extends JpaRepository<Corridor, Long> {
 
     List<Corridor> findCorridorByTenantId (String tenantId);
+    boolean existsBySendCountryAndSendCurrencyAndReceiveCountryAndReceiveCurrencyAndPayoutMethodAndTenantId
+            (String SendCountry,
+             String SendCurrency,
+             String ReceiveCountry,
+             String ReceiveCurrency,
+             String PayoutMethod,
+             String TenantId);
+
 
 }

@@ -2,6 +2,7 @@ package com.tgp.demo.controller;
 
 // This is the API layer which will talk to Service layer and from user's application
 
+import com.tgp.demo.dto.request.CorridorRequest;
 import com.tgp.demo.model.Corridor;
 import com.tgp.demo.service.CorridorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ public class CorridorController {
     }
 
     @PostMapping
-    public void addNewCorridor(@RequestBody Corridor corridor) {
-        corridorService.addNewCorridor(corridor);
+    public void addNewCorridor(@RequestBody CorridorRequest corridorRequest) {
+        corridorService.addNewCorridor(corridorRequest);
 
     }
 
