@@ -2,6 +2,9 @@ package com.tgp.demo.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor

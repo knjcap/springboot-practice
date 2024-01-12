@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
-// Use to add corridors
+// Use to add initial list of corridors when java start the application
 @Configuration
 public class StudentConfig {
     @Bean
@@ -44,7 +44,6 @@ public class StudentConfig {
             repository.saveAll(
                     List.of(swukphbt, wrusphcp, wraukemo)
             );
-
 
         };
     }

@@ -20,6 +20,4 @@ public interface CorridorRepository extends JpaRepository<Corridor, Long> {
              String ReceiveCurrency,
              String PayoutMethod,
              String TenantId);
-
-
 }

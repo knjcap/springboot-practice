@@ -31,5 +31,12 @@ public class CorridorController {
         corridorService.addNewCorridor(corridorRequest);
 
     }
+    @PutMapping(path = "{id}")
+    public void updateCorridorStatus(
+            @PathVariable ("id") Long id,
+            @RequestParam boolean status) {
+        CorridorRequest corridorRequest;
+        corridorService.updateCorridorStatus(id, status);
+    }
 
 }

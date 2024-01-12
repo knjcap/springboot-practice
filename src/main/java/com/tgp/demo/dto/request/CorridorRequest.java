@@ -1,6 +1,9 @@
 package com.tgp.demo.dto.request;
 
-public record CorridorRequest(
+import java.time.LocalDate;
+import java.util.Date;
+
+public record  CorridorRequest(
     Long id,
     String sendCountry,
     String sendCurrency,
@@ -9,4 +12,5 @@ public record CorridorRequest(
     String payoutMethod,
     String tenantId,
     boolean isActive) {
-}
+    }
+
