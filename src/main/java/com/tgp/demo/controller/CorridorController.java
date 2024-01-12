@@ -26,7 +26,7 @@ public class CorridorController {
 
     }
 
-    @PostMapping
+    @PostMapping (path ="/AddNewCorridor")
     public void addNewCorridor(@RequestBody CorridorRequest corridorRequest) {
         corridorService.addNewCorridor(corridorRequest);
 
