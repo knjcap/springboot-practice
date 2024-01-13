@@ -5,16 +5,12 @@ import com.tgp.demo.exceptionHandlers.DuplicateResourceException;
 import com.tgp.demo.exceptionHandlers.ResourceNotFoundException;
 import com.tgp.demo.model.Corridor;
 import com.tgp.demo.repository.CorridorRepository;
-import org.hibernate.annotations.TenantId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
-// This is a service layer which communicate back and forth with the API layer(in project its controller).
+// This is a service layer which communicate back and forth with the API layer(in project its controller as well as
+// the repository (which communicate with the database)
 // This is where the business logic are defined.
 @Service
 public class CorridorService {
@@ -72,6 +68,7 @@ public class CorridorService {
                 .build();
         corridorRepository.save(corridor);
     }
+
     @Transactional
     public void updateCorridorStatus (Long id, boolean status) {
         Corridor corridor = corridorRepository

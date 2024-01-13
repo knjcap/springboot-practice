@@ -7,7 +7,6 @@ import com.tgp.demo.model.Corridor;
 import com.tgp.demo.service.CorridorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -55,6 +54,7 @@ public class CorridorController {
         corridorService.addNewCorridor(corridorRequest);
 
     }
+
     @PutMapping(path = "/updateCorridorStatus/{id}")
     public void updateCorridorStatus(
             @PathVariable ("id") Long id,

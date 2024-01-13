@@ -13,7 +13,7 @@ public class StudentConfig {
     @Bean
     CommandLineRunner commandLineRunner(CorridorRepository repository) {
         return args ->  {
-            Corridor swukphbt = new Corridor(
+            Corridor swgbphbt = new Corridor(
                     null,
                     "United Kingdom",
                     "Sterling Pound",
@@ -46,9 +46,31 @@ public class StudentConfig {
                     true,
                     null,
                     null);
+            Corridor wrfrzmbt = new Corridor(
+                    null,
+                    "France",
+                    "Euro",
+                    "Zimbabwe",
+                    "US Dollar",
+                    "Bank Transfer",
+                    "WorldRemit",
+                    false,
+                    null,
+                    null);
+            Corridor swgbngbt = new Corridor(
+                    null,
+                    "United Kingdom",
+                    "Sterling Pound",
+                    "Nigeria",
+                    "Nigerian Naira",
+                    "Bank Transfer",
+                    "Sendwave",
+                    true,
+                    null,
+                    null);
 
             repository.saveAll(
-                    List.of(swukphbt, wrusphcp, wraukemo)
+                    List.of(swgbphbt, wrusphcp, wraukemo, wrfrzmbt, swgbngbt)
             );
 
         };
