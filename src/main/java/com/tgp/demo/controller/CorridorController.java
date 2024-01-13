@@ -38,7 +38,7 @@ public class CorridorController {
             @RequestParam (required = false) String ReceiveCurrency,
             @RequestParam (required = false) String PayoutMethod,
             @RequestParam (required = false) String TenantId,
-            @RequestParam (required = false) boolean IsActive) {
+            @RequestParam (required = false, defaultValue = "true") boolean IsActive) {
         return corridorService.findCorridorByMultipleParameters
                 (SendCountry,
                 SendCurrency,
