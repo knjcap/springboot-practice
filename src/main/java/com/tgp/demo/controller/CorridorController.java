@@ -20,16 +20,34 @@ public class CorridorController {
         this.corridorService = corridorService;
     }
 
-    @GetMapping
+    @GetMapping (path="/all")
     public List<Corridor> getCorridor(){
         return corridorService.getCorridor();
 
     }
-    @GetMapping (path="/by")
+    @GetMapping (path="/search by")
     public List<Corridor> getCorridorByTenantId(
-            //@PathVariable ("h") String by,
             @RequestParam String tenantId) {
         return corridorService.getCorridorByTenantId(tenantId);
+    }
+    @GetMapping (path="/search by fields/")
+    public List<Corridor> findCorridorByMultipleParameters(
+            @RequestParam (required = false) String SendCountry,
+            @RequestParam (required = false) String SendCurrency,
+            @RequestParam (required = false) String ReceiveCountry,
+            @RequestParam (required = false) String ReceiveCurrency,
+            @RequestParam (required = false) String PayoutMethod,
+            @RequestParam (required = false) String TenantId,
+            @RequestParam (required = false) boolean IsActive) {
+        return corridorService.findCorridorByMultipleParameters
+                (SendCountry,
+                SendCurrency,
+                ReceiveCountry,
+                ReceiveCurrency,
+                PayoutMethod,
+                TenantId,
+                IsActive);
+
     }
 
     @PostMapping (path ="/AddNewCorridor")
@@ -37,7 +55,7 @@ public class CorridorController {
         corridorService.addNewCorridor(corridorRequest);
 
     }
-    @PutMapping(path = "{id}")
+    @PutMapping(path = "/updateCorridorStatus/{id}")
     public void updateCorridorStatus(
             @PathVariable ("id") Long id,
             @RequestParam boolean status) {

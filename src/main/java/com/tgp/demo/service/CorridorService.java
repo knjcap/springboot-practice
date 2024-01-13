@@ -33,6 +33,24 @@ public class CorridorService {
         return corridorRepository.findCorridorByTenantId(tenantID);
     }
 
+    public List<Corridor> findCorridorByMultipleParameters
+            (String SendCountry,
+             String SendCurrency,
+             String ReceiveCountry,
+             String ReceiveCurrency,
+             String PayoutMethod,
+             String TenantId,
+             boolean IsActive) {
+        return corridorRepository.findCorridorByMultipleParameters
+                (SendCountry,
+                SendCurrency,
+                ReceiveCountry,
+                ReceiveCurrency,
+                PayoutMethod,
+                TenantId,
+                IsActive);
+    }
+
     public void addNewCorridor(CorridorRequest corridorRequest) {
         boolean exist = corridorRepository.existsBySendCountryAndSendCurrencyAndReceiveCountryAndReceiveCurrencyAndPayoutMethodAndTenantId
                 (corridorRequest.sendCountry(), corridorRequest.sendCurrency(), corridorRequest.receiveCountry(),
